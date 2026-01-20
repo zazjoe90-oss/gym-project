@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { getFitnessAdvice } from '../geminiService';
-import { Message } from '../types';
+import { getFitnessAdvice } from '../geminiService.ts';
+import { Message } from '../types.ts';
 
 interface AICoachProps {
   t: any;

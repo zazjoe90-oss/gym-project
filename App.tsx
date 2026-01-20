@@ -1,22 +1,22 @@
 
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Benefits from './components/Benefits';
-import Programs from './components/Programs';
-import Team from './components/Team';
-import SuccessStories from './components/SuccessStories';
-import Pricing from './components/Pricing';
-import OpenGym from './components/OpenGym';
-import Contact from './components/Contact';
-import AICoach from './components/AICoach';
-import Footer from './components/Footer';
-import Blog from './components/Blog';
-import Schedule from './components/Schedule';
-import Wellness from './components/Wellness';
-import Legal from './components/Legal';
-import { translations } from './translations';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import Features from './components/Features.tsx';
+import Benefits from './components/Benefits.tsx';
+import Programs from './components/Programs.tsx';
+import Team from './components/Team.tsx';
+import SuccessStories from './components/SuccessStories.tsx';
+import Pricing from './components/Pricing.tsx';
+import OpenGym from './components/OpenGym.tsx';
+import Contact from './components/Contact.tsx';
+import AICoach from './components/AICoach.tsx';
+import Footer from './components/Footer.tsx';
+import Blog from './components/Blog.tsx';
+import Schedule from './components/Schedule.tsx';
+import Wellness from './components/Wellness.tsx';
+import Legal from './components/Legal.tsx';
+import { translations } from './translations.ts';
 
 export type ViewType = 'home' | 'team' | 'blog' | 'success' | 'schedule' | 'wellness' | 'privacy' | 'terms' | 'why';
 

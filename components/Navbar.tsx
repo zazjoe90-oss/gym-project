@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ViewType } from '../App';
+import { ViewType } from '../App.tsx';
 
 interface NavbarProps {
   scrolled: boolean;

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ViewType } from '../App';
+import { ViewType } from '../App.tsx';
 
 interface FooterProps {
   t: any;
