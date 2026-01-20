@@ -2,10 +2,9 @@ import React from 'react';
 
 interface HeroProps {
   t: any;
-  onBookClick?: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ t, onBookClick }) => {
+const Hero: React.FC<HeroProps> = ({ t }) => {
   return (
     <section 
       className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-black"
@@ -39,9 +38,8 @@ const Hero: React.FC<HeroProps> = ({ t, onBookClick }) => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
-              onClick={onBookClick}
               aria-label="Book a performance class"
-              className="w-full sm:w-auto bg-white text-black hover:bg-accent hover:text-white font-black px-8 md:px-10 py-4 md:py-5 rounded-sm tracking-widest transition-all duration-300 uppercase text-xs md:text-sm shadow-xl shadow-white/5 border-2 border-transparent hover:border-accent"
+              className="w-full sm:w-auto bg-white text-black hover:bg-accent hover:text-white font-black px-8 md:px-10 py-4 md:py-5 rounded-sm tracking-widest transition-all duration-300 uppercase text-xs md:text-sm shadow-xl shadow-white/5"
             >
               {t.hero.btn1}
             </button>

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -59,19 +60,6 @@ const App: React.FC = () => {
     if (aiButton) aiButton.click();
   };
 
-  const scrollToPrograms = () => {
-    if (view !== 'home') {
-      setView('home');
-      setTimeout(() => {
-        const el = document.getElementById('programs');
-        el?.scrollIntoView({ behavior: 'smooth' });
-      }, 150);
-    } else {
-      const el = document.getElementById('programs');
-      el?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const renderContent = () => {
     switch (view) {
       case 'blog':
@@ -98,7 +86,7 @@ const App: React.FC = () => {
       default:
         return (
           <>
-            <Hero t={t} onBookClick={scrollToPrograms} />
+            <Hero t={t} />
             <Features t={t} onChatClick={scrollToCoach} />
             <Benefits t={t} />
             <Programs t={t} />
