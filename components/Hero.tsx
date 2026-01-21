@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface HeroProps {
@@ -12,7 +13,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
     >
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1920" 
+          src={t.hero.image || "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1920"} 
           alt="Athlete performing elite performance training at Strong Box Gym Doha" 
           className="w-full h-full object-cover object-center opacity-40 grayscale"
           loading="eager"
@@ -53,7 +54,6 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
         </div>
       </div>
 
-      {/* Social Links for SEO Authority */}
       <div className={`hidden sm:flex absolute ${t.dir === 'rtl' ? 'left-6 md:left-12' : 'right-6 md:right-12'} bottom-8 md:bottom-12 flex-col gap-6 text-neutral-500 z-10`}>
         <a href="https://www.instagram.com/thestrongbox/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-all transform hover:scale-125" aria-label="Follow Strong Box on Instagram"><i className="fab fa-instagram text-xl"></i></a>
         <a href="https://www.facebook.com/strongboxqatar/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-all transform hover:scale-125" aria-label="Join Strong Box on Facebook"><i className="fab fa-facebook-f text-xl"></i></a>

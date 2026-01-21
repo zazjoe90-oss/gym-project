@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,127 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STRONG BOX | DOHA ELITE PERFORMANCE GYM</title>
     
-    <!-- SEO Foundation -->
+    <!-- Meta Tags & SEO -->
     <link rel="canonical" href="https://strongboxdoha.com/" />
-    <meta name="robots" content="index, follow">
     <meta name="description" content="Strong Box is Doha's premier CrossFit and elite performance gym. Established in 2013 at Doha Sports Park, we offer Strength & Conditioning, SBX Fit, and expert coaching in Lusail.">
-    <meta name="keywords" content="Gym Doha, CrossFit Qatar, Personal Training Lusail, Fitness Doha Sports Park, Strength and Conditioning Qatar, Strong Box Gym, QUWWA, SBX Fit">
-    <meta name="author" content="Strong Box Doha">
+    <meta name="theme-color" content="#0a0a0a">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://strongboxdoha.com/">
+    <!-- Open Graph / Social -->
     <meta property="og:title" content="STRONG BOX | DOHA ELITE PERFORMANCE GYM">
-    <meta property="og:description" content="The first-ever CrossFit gym in Qatar. Elite training, world-class coaches, and a 1,200M² state-of-the-art facility. Join the revolution.">
+    <meta property="og:description" content="The first-ever CrossFit gym in Qatar. Elite training, world-class coaches, and a 1,200M² facility.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://strongboxdoha.com/">
-    <meta property="twitter:title" content="STRONG BOX | DOHA ELITE PERFORMANCE GYM">
-    <meta property="twitter:description" content="Transform your fitness at Qatar's premier elite performance gym. Join the SBX tribe in Lusail.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200">
-
-    <!-- Local Business Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ExerciseGym",
-      "name": "Strong Box Doha",
-      "alternateName": ["StrongBox", "SBX Doha"],
-      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200",
-      "@id": "https://strongboxdoha.com",
-      "url": "https://strongboxdoha.com",
-      "telephone": "+97444550123",
-      "priceRange": "$$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Doha Sports Park, Lusail",
-        "addressLocality": "Doha",
-        "addressRegion": "Qatar",
-        "postalCode": "00000",
-        "addressCountry": "QA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 25.4081944,
-        "longitude": 51.5039324
-      },
-      "hasMap": "https://maps.app.goo.gl/kPQWq9jZg4XK83EN9",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "06:00",
-        "closes": "21:00"
-      },
-      "sameAs": [
-        "https://www.instagram.com/thestrongbox/",
-        "https://www.facebook.com/strongboxqatar/",
-        "https://www.youtube.com/channel/UCWkvbZLSVElXym9KHtiqTrg"
-      ]
-    }
-    </script>
-
+    <!-- Styles & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@500;700&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6a948408a2.js" crossorigin="anonymous"></script>
-    <style>
-        :root {
-          --accent: #B22222;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-        [lang="ar"] {
-            font-family: 'Cairo', sans-serif;
-        }
-        .font-oswald {
-            font-family: 'Oswald', sans-serif;
-        }
-        [lang="ar"] .font-oswald {
-            font-family: 'Cairo', sans-serif;
-            font-weight: 900;
-        }
-        .text-accent {
-            color: var(--accent);
-        }
-        .bg-accent {
-            background-color: var(--accent);
-        }
-        .border-accent {
-            border-color: var(--accent);
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent);
-        }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
-  }
-}
-</script>
+    <link rel="stylesheet" href="./globals.css">
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+      }
+    }
+    </script>
 </head>
 <body>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>

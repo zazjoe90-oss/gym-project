@@ -16,7 +16,7 @@ import Blog from './components/Blog.tsx';
 import Schedule from './components/Schedule.tsx';
 import Wellness from './components/Wellness.tsx';
 import Legal from './components/Legal.tsx';
-import { translations } from './translations.ts';
+import { translations, branding } from './translations.ts';
 
 export type ViewType = 'home' | 'team' | 'blog' | 'success' | 'schedule' | 'wellness' | 'privacy' | 'terms' | 'why';
 
@@ -27,6 +27,9 @@ const App: React.FC = () => {
   const t = translations[lang];
 
   useEffect(() => {
+    // Inject accent color from JSON Manifest
+    document.documentElement.style.setProperty('--accent', branding.accent);
+    
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -34,23 +37,22 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // SEO: Update page title and reset scroll when view changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
     const titles: Record<ViewType, string> = {
-      home: 'Home | STRONG BOX DOHA',
-      team: 'Elite Coaches | STRONG BOX DOHA',
-      blog: 'The Journal | STRONG BOX DOHA',
-      success: 'Success Stories | STRONG BOX DOHA',
-      schedule: 'Battle Plan Schedule | STRONG BOX DOHA',
-      wellness: 'Corporate Wellness | STRONG BOX DOHA',
-      privacy: 'Privacy Policy | STRONG BOX DOHA',
-      terms: 'Terms of Service | STRONG BOX DOHA',
-      why: 'Why Choose SBX | STRONG BOX DOHA'
+      home: `Home | ${branding.name} DOHA`,
+      team: `Elite Coaches | ${branding.name} DOHA`,
+      blog: `The Journal | ${branding.name} DOHA`,
+      success: `Success Stories | ${branding.name} DOHA`,
+      schedule: `Battle Plan Schedule | ${branding.name} DOHA`,
+      wellness: `Corporate Wellness | ${branding.name} DOHA`,
+      privacy: `Privacy Policy | ${branding.name} DOHA`,
+      terms: `Terms of Service | ${branding.name} DOHA`,
+      why: `Why Choose SBX | ${branding.name} DOHA`
     };
     
-    document.title = titles[view] || 'STRONG BOX | DOHA ELITE PERFORMANCE';
+    document.title = titles[view] || `${branding.name} | DOHA ELITE PERFORMANCE`;
   }, [view]);
 
   const toggleLang = () => setLang(prev => prev === 'en' ? 'ar' : 'en');
@@ -61,43 +63,43 @@ const App: React.FC = () => {
   };
 
   const renderContent = () => {
-    switch (view) {
-      case 'blog':
-        return <Blog t={t} />;
-      case 'schedule':
-        return <Schedule t={t} />;
-      case 'wellness':
-        return <Wellness t={t} />;
-      case 'team':
-        return <Team t={t} />;
-      case 'success':
-        return <SuccessStories t={t} />;
-      case 'privacy':
-      case 'terms':
-        return <Legal t={t} type={view} />;
-      case 'why':
-        return (
-          <div className="pt-24">
-            <Features t={t} onChatClick={scrollToCoach} />
-            <Benefits t={t} />
-          </div>
-        );
-      case 'home':
-      default:
-        return (
-          <>
-            <Hero t={t} />
-            <Features t={t} onChatClick={scrollToCoach} />
-            <Benefits t={t} />
-            <Programs t={t} />
-            <Team t={t} />
-            <OpenGym t={t} />
-            <SuccessStories t={t} />
-            <Pricing t={t} />
-            <Contact t={t} onChatClick={scrollToCoach} />
-          </>
-        );
-    }
+    return (
+      <div key={view} className="view-transition">
+        {(() => {
+          switch (view) {
+            case 'blog': return <Blog t={t} />;
+            case 'schedule': return <Schedule t={t} />;
+            case 'wellness': return <Wellness t={t} />;
+            case 'team': return <Team t={t} />;
+            case 'success': return <SuccessStories t={t} />;
+            case 'privacy':
+            case 'terms': return <Legal t={t} type={view} />;
+            case 'why':
+              return (
+                <div className="pt-24">
+                  <Features t={t} onChatClick={scrollToCoach} />
+                  <Benefits t={t} />
+                </div>
+              );
+            case 'home':
+            default:
+              return (
+                <>
+                  <Hero t={t} />
+                  <Features t={t} onChatClick={scrollToCoach} />
+                  <Benefits t={t} />
+                  <Programs t={t} />
+                  <Team t={t} />
+                  <OpenGym t={t} />
+                  <SuccessStories t={t} />
+                  <Pricing t={t} />
+                  <Contact t={t} onChatClick={scrollToCoach} />
+                </>
+              );
+          }
+        })()}
+      </div>
+    );
   };
 
   return (
